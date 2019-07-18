@@ -1,0 +1,36 @@
+{
+  "name": "lasupassport",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "image-downloader": "^3.4.2",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "node-image-downloader": "^1.0.6",
+    "nodemon": "^1.19.1"
+  },
+  "description": "LASU students passport downloader",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "olabiranj"
+  },
+  "keywords": [
+    "passpor",
+    "LASU",
+    "LASU-passport",
+    "passport",
+    "generator"
+  ],
+  "author": "Olabiran Joshua Olaiya (Mainjoe)",
+  "license": "ISC"
+}
