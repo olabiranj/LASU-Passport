@@ -22,23 +22,15 @@ router.route('/')
     download.image(options)
       .then(({ filename, image }) => {
         console.log('File saved to', filename);
-        res.download(`./${filename}`);
-        res.redirect('/');
+        res.download(`./${filename}`, function(){
+          fs.unlink(`./${filename}`, () => console.log('success'))
+        });
       })
       .catch((err) => {
+        console.log(err)
         res.render('index', { msg: "You input a wrong matric number or you're probably not a lasuite"})
       })
   })
 
-router.get('/test', (req, res, next) => {
-  res.download("./public/uploads/150115008.jpg", (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log('Image successfully download');
-    }
-  });
-
-})
 
 module.exports = router;
