@@ -15,13 +15,14 @@ router.route('/')
     let MAT = mat.trim()
     // Download to a directory and save with the original filename
     const options = {
-      url: `http://studentservices.lasu.edu.ng/returningstudents/images/stud_image/${MAT}.jpg`,
+      url: `http://www.studentservices.lasu.edu.ng/returningstudents/images/stud_image/${MAT}.jpg`,
       dest: './public/uploads'                  // Save to /path/to/dest/image.jpg
     }
 
     download.image(options)
       .then(({ filename, image }) => {
         console.log('File saved to', filename);
+        console.log('File image', image);
         res.download(`./${filename}`, function(){
           fs.unlink(`./${filename}`, () => console.log('success'))
         });
